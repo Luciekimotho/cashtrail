@@ -76,6 +76,32 @@ To get a local copy up and running, follow these simple steps.
 
     The application will be available at `http://localhost:5173`.
 
+## 🌐 Deployment
+
+This application is optimized for deployment on [Vercel](https://vercel.com/), which offers a seamless and free hosting experience for modern web applications.
+
+To deploy your own version of CashTrail:
+
+1.  **Push to GitHub**: Ensure your project, including your latest changes, is pushed to a GitHub repository. **Important**: Make sure to commit the `package-lock.json` file as well, as Vercel uses it to install the exact dependency versions.
+
+2.  **Import Project on Vercel**:
+    -   Sign up for a free Vercel account and connect it to your GitHub.
+    -   Click "Add New..." -> "Project".
+    -   Select your CashTrail repository from the list.
+
+3.  **Configure Project**:
+    -   Vercel will automatically detect that you are using Vite and configure the build settings for you. You typically do not need to change anything here.
+    -   The most important step is to add your Firebase environment variables. Go to the "Settings" tab of your new Vercel project, then click on "Environment Variables".
+    -   Add each variable from your `.env.local` file. For example:
+        -   **Name**: `VITE_FIREBASE_API_KEY`, **Value**: `your_api_key_value`
+        -   **Name**: `VITE_FIREBASE_AUTH_DOMAIN`, **Value**: `your_auth_domain_value`
+        -   ...and so on for all the variables in `.env.example`.
+
+4.  **Deploy**:
+    -   Click the "Deploy" button. Vercel will build and deploy your application.
+    -   Once complete, you will be given a public URL where you can access your live CashTrail application.
+
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/cashtrail/issues).
@@ -83,3 +109,4 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 ## 📄 License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
+
